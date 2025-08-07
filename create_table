@@ -2,11 +2,12 @@
 SELECT @@version;
 
 --create table
-create table team_members (
-name nvarchar(100) not null,
-last_name nvarchar(100) not null,
-active tinyint default 1 --comment 'Flag: 1 = still in team, 0 = left',
-primary key (name, last_name)
+CREATE TABLE team_members (
+ MemberID INT IDENTITY(1,1) PRIMARY KEY,
+  name NVARCHAR(100) NOT NULL,
+  last_name NVARCHAR(100) NOT NULL,
+  active TINYINT DEFAULT 1,
+  CONSTRAINT unique_name_lastname UNIQUE (name, last_name)
 );
 
 --add comment to 'active' field
