@@ -1,3 +1,6 @@
+--verificare motore SQL
+SELECT @@version;
+
 --create table
 create table team_members (
 name nvarchar(100) not null,
