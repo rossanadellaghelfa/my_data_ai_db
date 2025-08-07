@@ -13,3 +13,16 @@ EXEC sp_addextendedproperty
     @level0type = N'SCHEMA', @level0name = 'dbo',
     @level1type = N'TABLE',  @level1name = 'team_members',
     @level2type = N'COLUMN', @level2name = 'active';
+
+--check if there are comments on the fields
+SELECT  
+    s.name AS [Schema],
+    t.name AS [Table],
+    c.name AS [Column],
+    ep.name AS [PropertyName],
+    ep.value AS [Comment]
+FROM sys.extended_properties ep
+INNER JOIN sys.tables t ON ep.major_id = t.object_id
+INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+INNER JOIN sys.columns c ON ep.major_id = c.object_id AND ep.minor_id = c.column_id
+WHERE ep.name = 'MS_Description';
