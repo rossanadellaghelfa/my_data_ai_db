@@ -4,7 +4,7 @@ SELECT @@version;
 --create table
 CREATE TABLE team_members (
  MemberID INT IDENTITY(1,1) PRIMARY KEY,
-  name NVARCHAR(100) NOT NULL,
+  first_name NVARCHAR(100) NOT NULL,
   last_name NVARCHAR(100) NOT NULL,
   active TINYINT DEFAULT 1,
   CONSTRAINT unique_name_lastname UNIQUE (name, last_name)
