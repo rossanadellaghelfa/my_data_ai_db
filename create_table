@@ -30,3 +30,34 @@ INNER JOIN sys.tables t ON ep.major_id = t.object_id
 INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
 INNER JOIN sys.columns c ON ep.major_id = c.object_id AND ep.minor_id = c.column_id
 WHERE ep.name = 'MS_Description';
+
+--insert team members
+Insert Into Team_Members (Name, Last_Name, Active) Values
+  ('Jasper', 'Standaert', 1),
+  ('Albert', 'Lambert', 1),
+  ('Biagio', 'Fusco', 1),
+  ('Cedric', 'Vansuyt', 1),
+  ('Erik', 'Pingnet', 1),
+  ('Guy', 'Buts', 1),
+  ('Jasper', 'De Roeck', 1),
+  ('Jonathan', 'Wrincq', 1),
+  ('Nour', 'Sobh', 1),
+  ('Sasi Kumar', 'Bommireddy', 1),
+  ('Stefaan', 'Segaert', 1),
+  ('Wietse', 'De Braekeleer', 1),
+  ('Rachid', 'Elmeziane', 1),
+  ('Lina', 'Boulahya', 1),
+  ('Johan', 'Nguz', 1),
+  ('Jonas', 'Meurisse', 1),
+  ('Johan', 'Kumps', 0),
+  ('An-Sofie', 'Wuns', 1),
+  ('Tim', 'D''haese', 1),
+  ('Olivier', 'Kulutila Vuvu', 1),
+  ('Arnaud', 'Van Echelpoel', 1),
+  ('Henri', 'Van Laere', 1),
+  ('Sampath', 'Mukherjee', 0),
+  ('Rossana', 'Della Ghelfa', 1),
+  ('Erik', 'Peeters', 1),
+  ('Liam', 'Vanderstappen', 1),
+  ('Reina', 'Renard', 1),
+  ('Kristof', 'Geilenkotten', 1);
